@@ -31,3 +31,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ##### npm run build --- 正式环境（线上）
 ##### npm run test ---  测试环境环境（本地）
 
+
+
+##### npm run lint-fix --- 运行eslint校验
+

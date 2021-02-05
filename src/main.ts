@@ -5,5 +5,4 @@ import store from './store'
 import './plugins/element.js'
 
 
-
 createApp(App).use(store).use(router).mount('#app')

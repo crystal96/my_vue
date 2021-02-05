@@ -1,8 +1,4 @@
-const { config } = require("process");
 const path = require("path");
-const resolve = function(dir) {
-  return path.join(__dirname, dir);
-};
 
 module.exports = {
   publicPath: "/", // 公共路径
@@ -14,7 +10,7 @@ module.exports = {
   chainWebpack: config => {
     config.optimization.runtimeChunk("single");
     config.optimization.minimizer("terser").tap(args => {
-      args[0].terserOptions.compress.drop_console = true; // 去除生产环境的console
+      args[0].terserOptions.compress.dropConsole = true; // 去除生产环境的console
       return args;
     });
   },
@@ -55,7 +51,7 @@ module.exports = {
       // 出现编译器错误或警告时，在浏览器中显示全屏覆盖层
       warning: false, // 警告
       error: true // 错误-编译出错是显示在网页上
-    },
+    }
     // 设置反向代理-代理服务器
     // proxy: {
     //   // 开发
