@@ -1,0 +1,19 @@
+/*
+Write your variables here. All available variables can be
+found in element-plus/packages/theme-chalk/src/common/var.scss.
+For example, to overwrite the theme color:
+*/
+// 主题色
+$--color-primary: #FF0000;
+$--font-path: '~element-plus/lib/theme-chalk/fonts';
+
+@import "~element-plus/packages/theme-chalk/src/index";
+
+// // 此处可修改element-plus主题
+// /* 改变主题色变量 */
+// $--color-primary: teal;
+
+// /* 改变 icon 字体路径变量，必需 */
+// $--font-path: '~element-plus/lib/theme-chalk/fonts';
+
+// @import "~element-plus/packages/theme-chalk/src/index";
