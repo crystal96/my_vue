@@ -1,0 +1,74 @@
+一. vue2.x的知识点
+1. 挂载点、模版、实例 之间的关系
+挂载点： Vue实例中的el属性的值 与 html上id值相对应的标签，就是vue实例的挂载点。
+        vue实例只会处理vue挂载点内部的内容。
+模版： 挂载点内部的内容，都叫做模版内容
+
+实例： 新建一个vue对象 new Vue({...})
+
+html： 
+<div id="root">
+    <h1>模版写法一：{{msg}}</h1>
+</div>
+
+script: 
+new Vue({
+    el: "#root",
+    template：'<h1>模版写法二</h1>',
+    data:{
+        msg:"hello word",
+        number: 123,
+        content:"<h1>v-html</h1>"
+    },
+    methods:{
+        handleClick(){
+            this.content = "hi"
+        }
+    }
+})
+
+2. vue中的数据展示/绑定
+   插值表达式 {{...}} <h1>{{number}}</h1>
+   v-text 是一个指令  <h1 v-text="number"></h1>
+   v-html 是一个可以解析html代码的指令  <h1 v-html="content"></h1>
+
+   vue中的事件
+   v-on 绑定事件 <div v-on:click="handleClick">{{content}}</div>
+   可以简写成@click="方法名"
+
+   vue中的方法
+   函数方法写在methods中
+
+3. vue属性绑定,双向数据绑定
+    html：
+    <div v-bind:title="title">div标签</div>
+
+    script：
+    new Vue({
+        el: "#root",
+        template：'<h1>模版写法二</h1>',
+        data:{
+            title:"这是title标签",
+            content:"双向数据绑定"
+        },
+    })
+属性绑定 需要使用 v-bind 指令 <div v-bind:title="title">div标签</div>
+可以简写成 <div :title="title">div标签</div>
+
+    双向数据绑定 v-model指令 将html与vue实例中的数据绑定起来
+    html：
+    <input v-model="content" />
+    <div>{{content}}</div>
+
+    script：
+    new Vue({
+        el: "#root",
+        data:{
+            content:"双向数据绑定"
+        },
+    })
+
+
+4. 计算属性 和 侦听器
+    计算属性
+    
